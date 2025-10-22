@@ -5,7 +5,7 @@
 
 ### Disciplina
 
-(IN1007) Paradigmas de Linguagens de Programação - Cin/UFPE
+(IN1007) Paradigmas de Linguagens de Programação - Cin|UFPE
 
 ### Professor
 
@@ -17,7 +17,7 @@ Maria Fernanda de Lima Oliveira Sales| mflos@cin.ufpe.br
 
 Jóison Oliveira Pereira | jop@cin.ufpe.br
 
-*Ricardo Pereira Lins | rpl3@cin.ufpe.br
+Ricardo Pereira Lins | rpl3@cin.ufpe.br
 
 ### Contextualização
 
@@ -104,7 +104,7 @@ DeclaracaoFuncional ::= DecVariavel
                      | DecFuncao 
                      | DecComposta
                      
-DecVariavel ::= "var" Id "=" Expressao
+DecVariavel ::="var" Id "=" Expressao
 
 DecFuncao ::= "fun" ListaParametro "=" Expressao
 
