@@ -46,46 +46,81 @@ Funções possam receber uma pilha como argumento, manipular seus elementos e re
 Programa ::= Expressao
 
 Expressao ::= Valor 
+
             | ExpUnaria 
+            
             | ExpBinaria 
+            
             | ExpDeclaracao 
+            
             | Id 
+            
             | Aplicacao 
+            
             | IfThenElse
-            | OperacaoPilha
+            
 
 Valor ::= ValorConcreto
-ValorConcreto ::= ValorInteiro | ValorBooleano | ValorString
+
+ValorConcreto ::= ValorInteiro 
+
+                  |ValorBooleano 
+                  
+                  | ValorString 
+                  
+                  | ValorPilha 
+                  
+                  | ValorEmptyStack
 
 ExpUnaria ::= "-" Expressao 
+
             | "not" Expressao 
+            
             | "length" Expressao
+            
+            | "pop" Expressao
+            
+            | "top" Expressao
+            
 
 ExpBinaria ::= Expressao "+" Expressao 
-             | Expressao "-" Expressao 
-             | Expressao "and" Expressao 
-             | Expressao "or" Expressao 
-             | Expressao "==" Expressao 
+
+             | Expressao "-" Expressao
+             
+             | Expressao "and" Expressao
+             
+             | Expressao "or" Expressao
+             
+             | Expressao "==" Expressao
+             
              | Expressao "++" Expressao
+             
+             | Expresssao "push" Expressao
 
 ExpDeclaracao ::= "let" DeclaracaoFuncional "in" Expressao
-DeclaracaoFuncional ::= DecVariavel | DecFuncao | DecComposta
+
+DeclaracaoFuncional ::= DecVariavel 
+
+                     | DecFuncao 
+                     | DecComposta
+                     
 DecVariavel ::= "var" Id "=" Expressao
+
 DecFuncao ::= "fun" ListaParametro "=" Expressao
+
 DecComposta ::= DeclaracaoFuncional "," DeclaracaoFuncional
 
 ListaParametro ::= Parametro | Parametro ListaParametro
+
 Parametro ::= ParametroObrigatorio
 
 Aplicacao ::= Id"(" ListExp ")"
+
 ListExp ::= Expressao | Expressao, ListExp
 
 IfThenElse ::= "if" Expressao "then" Expressao "else" Expressao
 
-OperacaoPilha ::= "push" "(" Expressao "," Expressao ")"
-                 | "pop" "(" Expressao ")"
-                 | "top" "(" Expressao ")"
-                 | "emptyStack"
+
 
 
 
