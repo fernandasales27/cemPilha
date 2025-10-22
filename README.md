@@ -95,7 +95,7 @@ ExpBinaria ::= Expressao "+" Expressao
              
              | Expressao "++" Expressao
              
-             | Expresssao "push" Expressao
+             | Expressao "push" "(" Expressao ")"
 
 ExpDeclaracao ::= "let" DeclaracaoFuncional "in" Expressao
 
