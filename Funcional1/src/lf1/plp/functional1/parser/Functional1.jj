@@ -32,7 +32,7 @@ import lf1.plp.expressions2.expression.ValorBooleano;
 import lf1.plp.expressions2.expression.ValorInteiro;
 import lf1.plp.expressions2.expression.ValorString;
 
-import lf1.plp.expressions1.util.TipoPilha;
+import lf1.plp.functional1.util.TipoPilha;
 import lf1.plp.expressions2.expression.ValorPilha;
 import lf1.plp.functional1.expression.ExpEmptyStack;
 import lf1.plp.functional1.expression.ExpPush;
