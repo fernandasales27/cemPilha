@@ -1,9 +1,9 @@
-package lf1.plp.expressions2.expression; // <-- FIX 1: Correct package
+package lf1.plp.expressions2.expression; 
 
 import java.util.Stack;
 import lf1.plp.expressions1.util.Tipo;
 import lf1.plp.expressions1.util.TipoPilha;
-import lf1.plp.expressions2.memory.AmbienteCompilacao; // <-- FIX 2: Import AmbCompilacao
+import lf1.plp.expressions2.memory.AmbienteCompilacao; 
 import lf1.plp.expressions2.memory.AmbienteExecucao;
 import lf1.plp.expressions2.memory.VariavelJaDeclaradaException;
 import lf1.plp.expressions2.memory.VariavelNaoDeclaradaException;
@@ -12,13 +12,9 @@ public class ValorPilha extends ValorConcreto<Stack<Valor>> {
 
     private TipoPilha tipoPilha;
 
-    /**
-     * Construtor para uma pilha vazia (usado por ExpEmptyStack).
-     * O tipo será polimórfico (stack(?)) por padrão.
-     */
     public ValorPilha() {
         super(new Stack<Valor>());
-        this.tipoPilha = new TipoPilha(); // Cria com TipoPolimorfico por padrão
+        this.tipoPilha = new TipoPilha(); 
     }
     
     /**
@@ -30,13 +26,11 @@ public class ValorPilha extends ValorConcreto<Stack<Valor>> {
         this.tipoPilha = tipo;
     }
 
-    // FIX 3: Signature changed to AmbienteCompilacao
-    // O 'amb' é ignorado, pois um valor conhece seu próprio tipo.
+
     public Tipo getTipo(AmbienteCompilacao amb) {
         return tipoPilha;
     }
     
-    // FIX 4: Removed runtime type-checking.
     // O tipo da pilha NUNCA muda em tempo de execução.
     // A checagem de tipo já foi feita em ExpPush.checaTipo.
     public ValorPilha push(Valor elemento) { 
@@ -72,7 +66,7 @@ public class ValorPilha extends ValorConcreto<Stack<Valor>> {
         return this.valor().toString();
     }
 
-    // FIX 5: Added clone() method
+
     @Override
     public ValorPilha clone() {
         Stack<Valor> novaStack = (Stack<Valor>) this.valor().clone();
