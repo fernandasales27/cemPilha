@@ -3,6 +3,7 @@ package lf1.plp.functional1.expression;
 import lf1.plp.expressions1.util.Tipo;
 import lf1.plp.functional1.util.TipoPilha;
 import lf1.plp.expressions2.expression.Expressao;
+import lf1.plp.expressions2.expression.ExpUnaria;
 import lf1.plp.expressions2.expression.Valor;
 import lf1.plp.expressions2.expression.ValorPilha;
 import lf1.plp.expressions2.memory.AmbienteCompilacao;
