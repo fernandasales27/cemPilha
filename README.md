@@ -34,6 +34,12 @@ O valor do topo da pilha seja lido (top) sem remover o elemento.
 Funções possam receber uma pilha como argumento, manipular seus elementos e retornar uma nova pilha.
 
 
+Os valores da pilha poderem ser invertidos.
+
+
+Somar os valores da pilha.
+
+
 ### Escopo do Projeto
 
 **Estender a Linguagem Funcional 1** apresentada na disciplina para que aa linguagem suporte operadores e funções de pilha, mantendo a semântica funcional.
@@ -94,4 +100,5 @@ OperacaoPilha ::= "push" "(" Expressao "," Expressao ")"
 Disponível 
 
 ## Publicando o site
+
 
