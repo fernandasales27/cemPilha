@@ -1,10 +1,10 @@
-package lf1.plp.expressions2.expression; // <-- FIX 1: Correct package
+package lf1.plp.expressions2.expression;
 
 import java.util.Stack;
 
 import lf1.plp.expressions1.util.Tipo;
 import lf1.plp.functional1.util.TipoPilha;
-import lf1.plp.expressions2.memory.AmbienteCompilacao; // <-- FIX 2: Import AmbCompilacao
+import lf1.plp.expressions2.memory.AmbienteCompilacao; 
 import lf1.plp.expressions2.memory.AmbienteExecucao;
 import lf1.plp.expressions2.memory.VariavelJaDeclaradaException;
 import lf1.plp.expressions2.memory.VariavelNaoDeclaradaException;
@@ -71,7 +71,8 @@ public class ValorPilha extends ValorConcreto<Stack<Valor>> {
 
     @Override
     public String toString() {
-        return this.valor().toString();
+        return this.valor().isEmpty() ? "PilhaVazia" : "Pilha: " + this.valor();
+        // this.valor().toString();
     }
 
     // FIX 5: Added clone() method

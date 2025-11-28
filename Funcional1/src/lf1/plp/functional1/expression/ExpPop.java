@@ -1,17 +1,15 @@
 package lf1.plp.functional1.expression;
 
 import lf1.plp.expressions1.util.Tipo;
-import lf1.plp.functional1.util.TipoPilha; // Mantido
-import lf1.plp.expressions2.expression.ExpUnaria; // Alterado!
+import lf1.plp.functional1.util.TipoPilha; 
+import lf1.plp.expressions2.expression.ExpUnaria; 
 import lf1.plp.expressions2.expression.Expressao;
 import lf1.plp.expressions2.expression.Valor;
-import lf1.plp.expressions2.expression.ValorPilha; // Mantido
+import lf1.plp.expressions2.expression.ValorPilha; 
 import lf1.plp.expressions2.memory.AmbienteCompilacao;
 import lf1.plp.expressions2.memory.AmbienteExecucao;
 import lf1.plp.expressions2.memory.VariavelJaDeclaradaException;
 import lf1.plp.expressions2.memory.VariavelNaoDeclaradaException;
-// Pode ser necessário importar PilhaVaziaException se o pop() de ValorPilha lançar
-// import lf1.plp.functional1.util.PilhaVaziaException;
 
 /**
  * Representa a expressão unária 'pop', que remove o elemento do topo da pilha.
