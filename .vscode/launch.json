@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Func1Parser",
+            "request": "launch",
+            "mainClass": "lf1.plp.functional1.parser.Func1Parser",
+            "projectName": "Funcional1"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "lf1.plp.functional1.parser.Main",

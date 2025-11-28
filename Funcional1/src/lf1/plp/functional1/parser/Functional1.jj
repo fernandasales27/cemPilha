@@ -38,6 +38,7 @@ import lf1.plp.functional1.expression.ExpEmptyStack;
 import lf1.plp.functional1.expression.ExpPush;
 import lf1.plp.functional1.expression.ExpPop;
 import lf1.plp.functional1.expression.ExpTop;
+import lf1.plp.functional1.expression.ExpInverte;
 
 public class Func1Parser
 {
@@ -176,6 +177,7 @@ TOKEN : /* TOKENS DE FUNCIONAL 1 */
 | < PUSH : "push" >
 | < POP : "pop" >
 | < TOP : "top" >
+| < INVERTE : "inverte" >
 | < EMPTYSTACK : "emptyStack" > 
 }
 
@@ -419,6 +421,12 @@ Expressao POperacaoPilha() :
     {
       
       return new ExpTop(exp1);
+    }
+  |
+    <INVERTE> <LPAREN> exp1 = PExpressao() <RPAREN>
+    {
+
+      return new ExpInverte(exp1);
     }
   )
 }

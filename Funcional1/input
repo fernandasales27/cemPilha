@@ -4,4 +4,5 @@ let var s = emptyStack in
       let var v2 = pop(s1) in
         let var v3 = push(s1, top(s2)) in
           let var v4 = push (v3, 4) in
-            v4
+          let var v5 = inverte(v4) in 
+            v5
