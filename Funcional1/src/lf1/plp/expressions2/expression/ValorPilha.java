@@ -27,7 +27,7 @@ public class ValorPilha extends ValorConcreto<Stack<Valor>> {
      * Construtor para uma pilha com tipo já conhecido.
      * Usado internamente por push/pop.
      */
-    private ValorPilha(Stack<Valor> valor, TipoPilha tipo) {
+    public ValorPilha(Stack<Valor> valor, TipoPilha tipo) {
         super(valor);
         this.tipoPilha = tipo;
     }
