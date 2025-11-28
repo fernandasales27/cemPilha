@@ -109,6 +109,11 @@ public class Func1Parser
         ValorBooleano valBool = (ValorBooleano) val;
         System.out.println("Funcional 1 PLP Parser Version 0.0.1: resultado=" + valBool.valor());
       }
+      else if (val instanceof ValorPilha)
+      {
+        ValorPilha valPilha = (ValorPilha) val;
+        System.out.println("Funcional 1 PLP Parser Version 0.0.1: Pilha= " + valPilha.valor());
+      }
     }
     catch (Exception e)
     {
