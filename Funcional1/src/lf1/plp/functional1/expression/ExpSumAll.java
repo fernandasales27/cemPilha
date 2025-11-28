@@ -35,7 +35,7 @@ public class ExpSumAll extends ExpUnaria {
         }
 
         ValorPilha pilha = (ValorPilha) valorAvaliado;
-        Stack<Valor> elementos = pilha.valor(); // acesso indireto, imutabilidade mantida
+        Stack<Valor> elementos = pilha.valor(); 
 
         int soma = 0;
         for (Valor v : elementos) {
