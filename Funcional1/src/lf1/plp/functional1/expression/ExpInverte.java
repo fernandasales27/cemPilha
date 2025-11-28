@@ -12,7 +12,6 @@ import lf1.plp.expressions2.memory.AmbienteCompilacao;
 import lf1.plp.expressions2.memory.AmbienteExecucao;
 import lf1.plp.expressions2.memory.VariavelJaDeclaradaException;
 import lf1.plp.expressions2.memory.VariavelNaoDeclaradaException;
-import lf1.plp.functional1.util.PilhaVaziaException;
 
 /**
  * Expressão unária 'inverte' que inverte todos os elementos de uma pilha.

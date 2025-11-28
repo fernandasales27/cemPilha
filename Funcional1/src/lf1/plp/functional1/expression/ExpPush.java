@@ -1,9 +1,9 @@
 package lf1.plp.functional1.expression;
 
 import lf1.plp.expressions1.util.Tipo;
-import lf1.plp.functional1.util.TipoPilha;     // Ajuste o import se necessário
-import lf1.plp.functional1.util.TipoPolimorfico; // Necessário para checagem correta
-import lf1.plp.expressions2.expression.ExpBinaria; // Alterado!
+import lf1.plp.functional1.util.TipoPilha;    
+import lf1.plp.functional1.util.TipoPolimorfico; 
+import lf1.plp.expressions2.expression.ExpBinaria; 
 import lf1.plp.expressions2.expression.Expressao;
 import lf1.plp.expressions2.expression.Valor;
 import lf1.plp.expressions2.expression.ValorPilha;

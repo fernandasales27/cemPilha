@@ -75,6 +75,6 @@ public class TipoPilha implements Tipo {
 
     @Override
     public String toString() {
-        return getNome();
+        return this.getNome();
     }
 }

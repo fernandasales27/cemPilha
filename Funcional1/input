@@ -1,8 +1,8 @@
 let var s = emptyStack in
-  let var s1 = push(s, 1) in      
-    let var s2 = push(s1, 2) in
+  let var s1 = push(s, "c") in      
+    let var s2 = push(s1, "R") in
       let var v2 = pop(s1) in
         let var v3 = push(s1, top(s2)) in
-          let var v4 = push (v3, 4) in
-          let var v5 = inverte(v4) in 
+          let var v4 = push (v3, "a") in
+          let var v5 = inverte (push(v4, 10)) in 
             v5
