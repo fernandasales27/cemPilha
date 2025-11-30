@@ -5,4 +5,10 @@ let var s = emptyStack in
         let var v3 = push(s1, top(s2)) in
           let var v4 = push (v3, "a") in
           let var v5 = inverte (push(v4, "oi")) in 
-            v5
+            let var v6 = push (s2, "Topo") in
+              let var pilha = emptyStack in
+                let var pilha2 = push (pilha, s1) in
+                   let var pilha3 = push (pilha2, v5) in 
+                    let var pilha4 = push (pilha3, s2) in 
+                      let var topP = top(pilha4) in 
+                        pilha4
