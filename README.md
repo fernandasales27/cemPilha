@@ -5,7 +5,7 @@
 
 ### Disciplina
 
-(IN1007) Paradigmas de Linguagens de Programação - Cin/UFPE
+(IN1007) Paradigmas de Linguagens de Programação - Cin|UFPE
 
 ### Professor
 
@@ -17,7 +17,7 @@ Maria Fernanda de Lima Oliveira Sales| mflos@cin.ufpe.br
 
 Jóison Oliveira Pereira | jop@cin.ufpe.br
 
-*Ricardo Pereira Lins | rpl3@cin.ufpe.br
+Ricardo Pereira Lins | rpl3@cin.ufpe.br
 
 ### Contextualização
 
@@ -34,12 +34,6 @@ O valor do topo da pilha seja lido (top) sem remover o elemento.
 Funções possam receber uma pilha como argumento, manipular seus elementos e retornar uma nova pilha.
 
 
-Os valores da pilha poderem ser invertidos.
-
-
-Somar os valores da pilha.
-
-
 ### Escopo do Projeto
 
 **Estender a Linguagem Funcional 1** apresentada na disciplina para que aa linguagem suporte operadores e funções de pilha, mantendo a semântica funcional.
@@ -52,46 +46,81 @@ Somar os valores da pilha.
 Programa ::= Expressao
 
 Expressao ::= Valor 
+
             | ExpUnaria 
+            
             | ExpBinaria 
+            
             | ExpDeclaracao 
+            
             | Id 
+            
             | Aplicacao 
+            
             | IfThenElse
-            | OperacaoPilha
+            
 
 Valor ::= ValorConcreto
-ValorConcreto ::= ValorInteiro | ValorBooleano | ValorString
+
+ValorConcreto ::= ValorInteiro 
+
+                  |ValorBooleano 
+                  
+                  | ValorString 
+                  
+                  | ValorPilha 
+                  
+                  | ValorEmptyStack
 
 ExpUnaria ::= "-" Expressao 
+
             | "not" Expressao 
+            
             | "length" Expressao
+            
+            | "pop" Expressao
+            
+            | "top" Expressao
+            
 
 ExpBinaria ::= Expressao "+" Expressao 
-             | Expressao "-" Expressao 
-             | Expressao "and" Expressao 
-             | Expressao "or" Expressao 
-             | Expressao "==" Expressao 
+
+             | Expressao "-" Expressao
+             
+             | Expressao "and" Expressao
+             
+             | Expressao "or" Expressao
+             
+             | Expressao "==" Expressao
+             
              | Expressao "++" Expressao
+             
+             | Expressao "push" "(" Expressao ")"
 
 ExpDeclaracao ::= "let" DeclaracaoFuncional "in" Expressao
-DeclaracaoFuncional ::= DecVariavel | DecFuncao | DecComposta
-DecVariavel ::= "var" Id "=" Expressao
+
+DeclaracaoFuncional ::= DecVariavel 
+
+                     | DecFuncao 
+                     | DecComposta
+                     
+DecVariavel ::="var" Id "=" Expressao
+
 DecFuncao ::= "fun" ListaParametro "=" Expressao
+
 DecComposta ::= DeclaracaoFuncional "," DeclaracaoFuncional
 
 ListaParametro ::= Parametro | Parametro ListaParametro
+
 Parametro ::= ParametroObrigatorio
 
 Aplicacao ::= Id"(" ListExp ")"
+
 ListExp ::= Expressao | Expressao, ListExp
 
 IfThenElse ::= "if" Expressao "then" Expressao "else" Expressao
 
-OperacaoPilha ::= "push" "(" Expressao "," Expressao ")"
-                 | "pop" "(" Expressao ")"
-                 | "top" "(" Expressao ")"
-                 | "emptyStack"
+
 
 
 
@@ -100,5 +129,4 @@ OperacaoPilha ::= "push" "(" Expressao "," Expressao ")"
 Disponível 
 
 ## Publicando o site
-
 
