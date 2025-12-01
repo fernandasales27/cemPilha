@@ -2,6 +2,7 @@ package lf1.plp.functional1.expression;
 
 import lf1.plp.expressions1.util.Tipo;
 import lf1.plp.functional1.util.TipoPilha;
+import lf1.plp.functional1.util.TipoPolimorfico;
 import lf1.plp.expressions2.expression.ExpUnaria;
 import lf1.plp.expressions2.expression.Valor;
 import lf1.plp.expressions2.expression.ValorPilha;
@@ -35,6 +36,17 @@ public class ExpTop extends ExpUnaria {
             System.err.println("Erro de Tipo: 'top' esperado em uma pilha. Encontrado: " + tipoPilha.getNome());
             return false;
         }
+
+        TipoPilha tipoPilhaConcreto = (TipoPilha) tipoPilha;
+        Tipo tipoElementoDaPilha = tipoPilhaConcreto.getSubTipo();
+
+        // 2. Se a pilha é vazia (null ou TipoPolimorfico), é erro para pop
+        if (tipoElementoDaPilha == null || tipoElementoDaPilha instanceof TipoPolimorfico) {
+            System.err.println(
+                    "Erro de Tipo: 'top' não pode ser aplicado em pilha vazia (tipo indefinido).");
+            return false;
+        }
+
         return true;
     }
 

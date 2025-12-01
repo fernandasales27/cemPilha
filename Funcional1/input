@@ -1,4 +1,5 @@
 let var s = emptyStack in
+  let var teste = top (s) in
   let var s1 = push(s, "c") in      
     let var s2 = push(s1, "R") in
       let var v2 = pop(s1) in
@@ -11,4 +12,4 @@ let var s = emptyStack in
                    let var pilha3 = push (pilha2, v5) in 
                     let var pilha4 = push (pilha3, s2) in 
                       let var topP = top(pilha4) in 
-                        pilha4
+                        teste
