@@ -8,8 +8,8 @@ import lf1.plp.expressions2.memory.VariavelJaDeclaradaException;
 import lf1.plp.expressions2.memory.VariavelNaoDeclaradaException;
 
 /**
-* Um objeto desta classe representa uma Expressao de Subtracao.
-*/
+ * Um objeto desta classe representa uma Expressao de Subtracao.
+ */
 public class ExpSub extends ExpBinaria {
 
 	/**
@@ -29,9 +29,8 @@ public class ExpSub extends ExpBinaria {
 	 */
 	public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return new ValorInteiro(
-				((ValorInteiro)getEsq().avaliar(amb)).valor() -
-				((ValorInteiro)getDir().avaliar(amb)).valor()
-		);
+				((ValorInteiro) getEsq().avaliar(amb)).valor() -
+						((ValorInteiro) getDir().avaliar(amb)).valor());
 	}
 
 	/**
@@ -39,14 +38,15 @@ public class ExpSub extends ExpBinaria {
 	 *
 	 * @param ambiente o ambiente de compila��o.
 	 * @return <code>true</code> se os tipos da expressao sao validos;
-	 *          <code>false</code> caso contrario.
+	 *         <code>false</code> caso contrario.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
-	 *          nao declarado no ambiente.
+	 *                                          nao declarado no ambiente.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
-	 *          declarado mais de uma vez no mesmo bloco do ambiente.
+	 *                                          declarado mais de uma vez no mesmo
+	 *                                          bloco do ambiente.
 	 */
-	protected boolean checaTipoElementoTerminal(AmbienteCompilacao ambiente)
-			throws VariavelNaoDeclaradaException,VariavelJaDeclaradaException {
+	protected boolean checaTipo(AmbienteCompilacao ambiente)
+			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return (getEsq().getTipo(ambiente).eInteiro() && getDir().getTipo(ambiente).eInteiro());
 	}
 
@@ -59,7 +59,7 @@ public class ExpSub extends ExpBinaria {
 	public Tipo getTipo(AmbienteCompilacao ambiente) {
 		return TipoPrimitivo.INTEIRO;
 	}
-	
+
 	@Override
 	public ExpBinaria clone() {
 		return new ExpSub(esq.clone(), dir.clone());

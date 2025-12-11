@@ -10,10 +10,10 @@ import lf1.plp.expressions2.memory.VariavelNaoDeclaradaException;
 /**
  * Um objeto desta classe representa uma Expressao de Conjuncao logica.
  */
-public class ExpAnd extends ExpBinaria{
+public class ExpAnd extends ExpBinaria {
 
 	/**
-	 * Controi uma Expressao de Conjuncao logica  com as sub-expressoes
+	 * Controi uma Expressao de Conjuncao logica com as sub-expressoes
 	 * especificadas. Estas devem ser tais que sua avaliacao retorna
 	 * <code>ValorBooleano</code>
 	 *
@@ -24,29 +24,28 @@ public class ExpAnd extends ExpBinaria{
 		super(esq, dir, "and");
 	}
 
-
 	/**
 	 * Retorna o valor da Expressao de Conjuncao Logica
 	 */
-	 public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
+	public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return new ValorBooleano(
-					((ValorBooleano)getEsq().avaliar(amb)).valor() &&
-					((ValorBooleano)getDir().avaliar(amb)).valor()
-		);
+				((ValorBooleano) getEsq().avaliar(amb)).valor() &&
+						((ValorBooleano) getDir().avaliar(amb)).valor());
 	}
- 
+
 	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
 	 * @param ambiente o ambiente de compila��o.
 	 * @return <code>true</code> se os tipos da expressao sao validos;
-	 *          <code>false</code> caso contrario.
+	 *         <code>false</code> caso contrario.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
-	 *          nao declarado no ambiente.
+	 *                                          nao declarado no ambiente.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
-	 *          declarado mais de uma vez no mesmo bloco do ambiente.
+	 *                                          declarado mais de uma vez no mesmo
+	 *                                          bloco do ambiente.
 	 */
-	protected boolean checaTipoElementoTerminal(AmbienteCompilacao ambiente)
+	protected boolean checaTipo(AmbienteCompilacao ambiente)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return (getEsq().getTipo(ambiente).eBooleano() && getDir().getTipo(ambiente).eBooleano());
 	}
@@ -60,7 +59,7 @@ public class ExpAnd extends ExpBinaria{
 	public Tipo getTipo(AmbienteCompilacao ambiente) {
 		return TipoPrimitivo.BOOLEANO;
 	}
-	
+
 	@Override
 	public ExpBinaria clone() {
 		return new ExpAnd(esq.clone(), dir.clone());

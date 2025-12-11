@@ -30,11 +30,11 @@ public abstract class ExpBinaria implements Expressao {
 	 * Construtor da classe.
 	 * 
 	 * @param esq
-	 *            a expressao da esquerda.
+	 *                 a expressao da esquerda.
 	 * @param esq
-	 *            a expressao da direita.
+	 *                 a expressao da direita.
 	 * @param operador
-	 *            o operador desta expressao binaria.
+	 *                 o operador desta expressao binaria.
 	 */
 	public ExpBinaria(Expressao esq, Expressao dir, String operador) {
 		this.esq = esq;
@@ -87,9 +87,11 @@ public abstract class ExpBinaria implements Expressao {
 	 * @return <code>true</code> se os tipos das subexpressoes sao validos;
 	 *         <code>false</code> caso contrario.
 	 * @exception VariavelJaDeclaradaException
-	 *                se a vari�vel j� est� declarada no ambiente
+	 *                                          se a vari�vel j� est� declarada no
+	 *                                          ambiente
 	 * @exception VariavelNaoDeclaradaException
-	 *                se a vari�vel ainda n�o foi declarada no ambiente.
+	 *                                          se a vari�vel ainda n�o foi
+	 *                                          declarada no ambiente.
 	 */
 	public boolean checaTipo(AmbienteCompilacao amb)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
@@ -97,7 +99,7 @@ public abstract class ExpBinaria implements Expressao {
 		if (!getEsq().checaTipo(amb) || !getDir().checaTipo(amb)) {
 			result = false;
 		} else {
-			result = this.checaTipoElementoTerminal(amb);
+			result = this.checaTipo(amb);
 		}
 		return result;
 	}
@@ -106,16 +108,15 @@ public abstract class ExpBinaria implements Expressao {
 	 * M�todo 'template' que ser� implementado nas subclasses para checar o tipo
 	 * do head terminal
 	 */
-	protected abstract boolean checaTipoElementoTerminal(AmbienteCompilacao amb)
+	protected abstract boolean checaTipo(AmbienteCompilacao amb)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException;
-	
-	
+
 	public Expressao reduzir(AmbienteExecucao ambiente) {
 		this.esq = this.esq.reduzir(ambiente);
 		this.dir = this.dir.reduzir(ambiente);
-		
+
 		return this;
 	}
-	
+
 	public abstract ExpBinaria clone();
 }

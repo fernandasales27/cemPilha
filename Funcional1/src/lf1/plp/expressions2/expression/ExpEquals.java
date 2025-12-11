@@ -42,17 +42,19 @@ public class ExpEquals extends ExpBinaria {
 	 * Realiza a verificacao de tipos desta expressao.
 	 * 
 	 * @param ambiente
-	 *            o ambiente de compila��o.
+	 *                 o ambiente de compila��o.
 	 * @return <code>true</code> se os tipos da expressao sao validos;
 	 *         <code>false</code> caso contrario.
 	 * @exception VariavelNaoDeclaradaException
-	 *                se existir um identificador nao declarado no ambiente.
+	 *                                          se existir um identificador nao
+	 *                                          declarado no ambiente.
 	 * @exception VariavelNaoDeclaradaException
-	 *                se existir um identificador declarado mais de uma vez no
-	 *                mesmo bloco do ambiente.
+	 *                                          se existir um identificador
+	 *                                          declarado mais de uma vez no
+	 *                                          mesmo bloco do ambiente.
 	 */
 	@Override
-	protected boolean checaTipoElementoTerminal(AmbienteCompilacao ambiente)
+	protected boolean checaTipo(AmbienteCompilacao ambiente)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return getEsq().getTipo(ambiente).eIgual(getDir().getTipo(ambiente));
 	}
@@ -61,13 +63,13 @@ public class ExpEquals extends ExpBinaria {
 	 * Retorna os tipos possiveis desta expressao.
 	 * 
 	 * @param ambiente
-	 *            o ambiente de compila��o.
+	 *                 o ambiente de compila��o.
 	 * @return os tipos possiveis desta expressao.
 	 */
 	public Tipo getTipo(AmbienteCompilacao ambiente) {
 		return TipoPrimitivo.BOOLEANO;
 	}
-	
+
 	@Override
 	public ExpBinaria clone() {
 		return new ExpEquals(esq.clone(), dir.clone());

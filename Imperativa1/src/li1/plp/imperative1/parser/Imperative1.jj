@@ -117,6 +117,7 @@ TOKEN : /* TOKENS DE IMPERATIVA 1 */
 {
   < VAR: "var" >
 | < COMAND_SKIP: "skip" >
+| < ATTSIM: "ats" >
 | < WHILE: "while" >
 | < DO: "do" >
 | < READ: "read" >
@@ -384,6 +385,39 @@ Atribuicao PAtribuicao() :
 	}
 }
 
+AtribuicaoSimultanea PAtribuicaoSimultanea() :
+{
+    List<Id> ids = new ArrayList<Id>();
+    List<Expressao> exps = new ArrayList<Expressao>();
+    Id idAux;
+    Expressao expAux;
+}
+{
+    // primeira variável
+    idAux = PId() { ids.add(idAux); }
+
+    // vírgula e próximas variáveis (opcional)
+    (
+        <VIRGULA> idAux = PId() { ids.add(idAux); }
+    )*
+
+    // operador de atribuição
+    <ATTRIB>
+
+    // primeira expressão
+    expAux = PExpressao() { exps.add(expAux); }
+
+    // vírgula e próximas expressões (opcional)
+    (
+        <VIRGULA> expAux = PExpressao() { exps.add(expAux); }
+    )*
+
+    {
+        return new AtribuicaoSimultanea(ids, exps);
+    }
+}
+
+
 Id PId() :
 {
 	Token token;
@@ -637,6 +671,7 @@ Comando PComandoSimples() :
     (
     	retorno = PSkip()
       | retorno = PAtribuicao()
+	  | retorno = PAtribuicaoSimultanea()
       | retorno = PComandoDeclaracao()
       | retorno = PWhile()
       | retorno = PIfThenElse()

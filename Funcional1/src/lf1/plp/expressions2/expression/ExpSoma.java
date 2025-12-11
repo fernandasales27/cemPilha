@@ -14,8 +14,9 @@ public class ExpSoma extends ExpBinaria {
 
 	/**
 	 * Controi uma Expressao de Soma com as sub-expressoes especificadas.
-	 * Assume-se que estas sub-expressoes resultam em <code>ValorInteiro</code> 
+	 * Assume-se que estas sub-expressoes resultam em <code>ValorInteiro</code>
 	 * quando avaliadas.
+	 * 
 	 * @param esq Expressao da esquerda
 	 * @param dir Expressao da direita
 	 */
@@ -28,22 +29,23 @@ public class ExpSoma extends ExpBinaria {
 	 */
 	public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return new ValorInteiro(
-			((ValorInteiro) getEsq().avaliar(amb)).valor() +
-			((ValorInteiro) getDir().avaliar(amb)).valor() );
+				((ValorInteiro) getEsq().avaliar(amb)).valor() +
+						((ValorInteiro) getDir().avaliar(amb)).valor());
 	}
-	
+
 	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
 	 * @param ambiente o ambiente de compila��o.
 	 * @return <code>true</code> se os tipos da expressao sao validos;
-	 *          <code>false</code> caso contrario.
+	 *         <code>false</code> caso contrario.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
-	 *          nao declarado no ambiente.
+	 *                                          nao declarado no ambiente.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
-	 *          declarado mais de uma vez no mesmo bloco do ambiente.
+	 *                                          declarado mais de uma vez no mesmo
+	 *                                          bloco do ambiente.
 	 */
-	protected boolean checaTipoElementoTerminal(AmbienteCompilacao ambiente)
+	protected boolean checaTipo(AmbienteCompilacao ambiente)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return (getEsq().getTipo(ambiente).eInteiro() && getDir().getTipo(ambiente).eInteiro());
 	}
@@ -57,7 +59,7 @@ public class ExpSoma extends ExpBinaria {
 	public Tipo getTipo(AmbienteCompilacao ambiente) {
 		return TipoPrimitivo.INTEIRO;
 	}
-	
+
 	@Override
 	public ExpBinaria clone() {
 		return new ExpSoma(esq.clone(), dir.clone());

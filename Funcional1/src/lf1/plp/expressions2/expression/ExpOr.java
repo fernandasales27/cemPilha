@@ -45,7 +45,7 @@ public class ExpOr extends ExpBinaria {
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
 	 *          declarado mais de uma vez no mesmo bloco do ambiente.
 	 */
-	protected boolean checaTipoElementoTerminal(AmbienteCompilacao ambiente)
+	protected boolean checaTipo(AmbienteCompilacao ambiente)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
 		return (getEsq().getTipo(ambiente).eBooleano() && getDir().getTipo(ambiente).eBooleano());
 	}
