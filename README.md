@@ -126,7 +126,6 @@ IfThenElse ::= "if" Expressao "then" Expressao "else" Expressao
 
 ## Slides da apresentação
 
-Disponível 
+Disponível no repositório
 
-## Publicando o site
 
